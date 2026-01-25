@@ -1,9 +1,9 @@
 #include "rclcpp/rclcpp.hpp"
 
-class SmartphoneNode : public rclcpp::Node //MODIFY NAME
+class CustomNode : public rclcpp::Node //MODIFY NAME
 {
 public:
-    SmartphoneNode() : Node("node_name")//MODIFY NAME
+    CustomNode() : Node("node_name")//MODIFY NAME
     {
 
     }
@@ -14,7 +14,7 @@ private:
 int main(int argc, char **argv)
 {
     rclcpp::init(argc, argv);
-    auto node = std::make_shared<SmartphoneNode>();//MODIFY NAME
+    auto node = std::make_shared<CustomNode>();//MODIFY NAME
     rclcpp::spin(node);
     rclcpp::shutdown();
     return 0;
