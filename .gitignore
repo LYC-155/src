@@ -1,0 +1,10 @@
+# VSCode 缓存（彻底忽略，避免大文件）
+.vscode/
+# ROS2 构建/日志文件
+build/
+install/
+log/
+# 其他临时文件
+*.pyc
+__pycache__/
+*.swp
