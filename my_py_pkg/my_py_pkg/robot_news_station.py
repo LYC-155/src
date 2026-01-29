@@ -3,17 +3,20 @@ import rclpy
 from rclpy.node import Node
 from example_interfaces.msg import String
 
-class RobotNewsStationNode(Node):#MODIFY NAME
+class RobotNewsStationNode(Node):
 
     def __init__(self):
-        super().__init__("robot_news_station") #MODIFY NAME
+        super().__init__("robot_news_station") 
+        self.declare_parameter("robot_name","C3P0")
+        self.robot_name_ = self.get_parameter("robot_name").value
+
         self.publishers_ = self.create_publisher(String, "robot_news", 10)
         self.timer_ = self.create_timer(0.5, self.pulish_news)
         self.get_logger().info("robot news station has been started")
 
     def pulish_news(self):
         msg = String()
-        msg.data = "hi, lyc"
+        msg.data = "hi, this is " + self.robot_name_
         self.publishers_.publish(msg)
 
 

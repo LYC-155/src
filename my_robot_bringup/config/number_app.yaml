@@ -1,0 +1,4 @@
+/my_number_publiher:
+  ros__parameters:
+    number: 6
+    timer: 0.5
